@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Chat Bot</title>
+  <script src="script.js"></script>
+  <script src="signin.js"></script>
+  <link rel="stylesheet" href="chatbox.css">
+  <link rel="stylesheet" href="topnav.css">
+  <link rel="stylesheet" href="styles.css">
+  <div style="float: right;">
+    <link rel="stylesheet" href="signin.css">
+  </div>
+</head>
+
+<body>
+  <div class="topnav">
+    <a class="active" onclick="scrollToSection('home')">Home</a>
+    <a onclick="scrollToSection('chatbot')">Chatbot</a>
+    <a onclick="scrollToSection('socials')">Socials</a>
+    <a onclick="openModal(document.getElementById('loginPrompt'))">Sign In</a>
+  </div>
+  <a name="home"></a><a name="chatbot"></a>
+  <div class="container">
+    <div id="chat-box">
+      <div class="flexbox">
+        <h1>Try our chatbot</h1>
+      </div>
+      <div id="chat-log"></div>
+      <input type="text" id="user-input" placeholder="Ask me anything.." onkeyup="handleUserInput(event)">
+    </div>
+    <div class="div">
+      <h1>What's this?</h1>
+      <p>I've made this website so people can get to know me</p>
+    </div>
+  </div>
+  <div class="container" name="socials">
+    <div class="div">
+      <h1>Socials</h1>
+      <p>Currently, I have a YouTube channel, but you can also visit me on <a
+          href="https://github.com/JojoplayzMC">Github.</a></p>
+    </div>
+  </div>
+
+  <div id="loginPrompt" class="modal">
+    <div class="modal-content" id="loginModal">
+      <button class="closeLoginPrompt">&times;</button>
+      <h1>Login</h1>
+      <div class="popup" onclick="helpPopup()">
+        <p>?
+          <span class="popuptext" id="myPopup">Loggin in is only for beta testers</span>
+      </div>
+
+      <div class="sign in">
+        <form onsubmit="checkUUID(); return false;">
+          <input type="text" id="usernameInput" placeholder="Username" name="username">
+          <input type="text" id="uuidInput" placeholder="UUID" name="uuid">
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
