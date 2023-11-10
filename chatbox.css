@@ -1,0 +1,105 @@
+#chat-box {
+  background: linear-gradient(to bottom, #cd9aff 0%, #2f2fff 100%);
+  border: none;
+  border-radius: 2vh;
+  width: 40%;
+  height: 40vh;
+  margin-top: 10vh;
+  margin-left: 10vh;
+  padding: 2vh;
+  box-shadow: 0 10px 20px rgba(26, 0, 42, 0.74);
+  max-width: 40%;
+  max-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flexbox {
+  display: flex;
+}
+
+#chat-log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2vh;
+}
+
+#chat-log div:nth-child(odd) {
+  background: linear-gradient(to bottom, #9aecff 0%, #2f93ff 100%);
+  padding: 1vh;
+  margin: 1vh 0;
+  border-radius: 5px;
+  animation: fade 0.5s ease-in-out;
+}
+
+#chat-log div:nth-child(even) {
+  background: linear-gradient(to top, #9aecff 0%, #2f93ff 100%);
+  padding: 1vh;
+  margin: 1vh 0;
+  border-radius: 5px;
+  animation: fade2 1s ease-in-out;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade2 {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 1vw;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 1vw;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  border-radius: 1vw;
+}
+
+#user-input {
+  width: 96%;
+  padding: 2vh;
+  border: none;
+  background: linear-gradient(to bottom, #8000ff 0%, #0000b5 100%);
+  border-radius: 1.5vh;
+  margin-left: -0.5%;
+  color: white;
+}
+
+#user-input::placeholder {
+  color: white;
+}
+
+#chat-log div strong {
+  font-weight: bold;
+  margin-right: 2vw;
+}
