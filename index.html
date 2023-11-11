@@ -10,9 +10,7 @@
   <link rel="stylesheet" href="chatbox.css">
   <link rel="stylesheet" href="topnav.css">
   <link rel="stylesheet" href="styles.css">
-  <div style="float: right;">
-    <link rel="stylesheet" href="signin.css">
-  </div>
+  <link rel="stylesheet" href="signin.css">
 </head>
 
 <body>
@@ -20,7 +18,7 @@
     <a class="active" onclick="scrollToSection('home')">Home</a>
     <a onclick="scrollToSection('chatbot')">Chatbot</a>
     <a onclick="scrollToSection('socials')">Socials</a>
-    <a onclick="openModal(document.getElementById('loginPrompt'))">Sign In</a>
+    <a onclick="openModal(document.getElementById('loginPrompt'))" class="purple">Sign In</a>
   </div>
   <a name="home"></a><a name="chatbot"></a>
   <div class="container">
@@ -48,16 +46,16 @@
     <div class="modal-content" id="loginModal">
       <button class="closeLoginPrompt">&times;</button>
       <h1>Login</h1>
-      <div class="popup" onclick="helpPopup()">
-        <p>?
-          <span class="popuptext" id="myPopup">Loggin in is only for beta testers</span>
-      </div>
 
       <div class="sign in">
         <form onsubmit="checkUUID(); return false;">
-          <input type="text" id="usernameInput" placeholder="Username" name="username">
-          <input type="text" id="uuidInput" placeholder="UUID" name="uuid">
-          <button type="submit">Sign In</button>
+          <input type="text" id="usernameInput" placeholder="Username" name="username" class="input">
+          <input type="text" id="uuidInput" placeholder="UUID" name="uuid" class="input">
+          <button type="submit" class="purple round">Sign In</button>
+          <div class="popup" onclick="helpPopup()">
+            <h2 class="purple round">?</h2>
+            <span class="popuptext" id="myPopup">Accounts are only for beta testers or special users</span>
+          </div>
         </form>
       </div>
     </div>
