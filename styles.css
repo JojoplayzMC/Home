@@ -22,3 +22,14 @@ body {
 .container {
     display: flex;
 }
+
+.purple {
+    background: linear-gradient(to bottom, #8000ff 0%, #0000b5 100%);
+    color: white;
+    border: none;
+}
+
+.round {
+    padding: 1vw;
+    border-radius: 1vw;
+}
