@@ -8,10 +8,41 @@
     margin-left: 10vh;
     padding: 2vh;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.74);
-    max-width: 40%;
+    max-width: 40vw;
     max-height: 40vh;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.divshort {
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 2vh;
+    height: 40vh;
+    margin-top: 10vh;
+    margin-left: 10vh;
+    padding: 2vh;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.74);
+    height: 15vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.divother {
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 2vh;
+    height: 40vh;
+    margin-top: 10vh;
+    margin-left: 10vh;
+    padding: 2vh;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.74);
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.full {
+    width: 85vw;
 }
 
 body {
@@ -32,4 +63,39 @@ body {
 .round {
     padding: 1vw;
     border-radius: 1vw;
+}
+
+button {
+    font-family: 'Segoe UI';
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #f5f5f5;
+    transition: cursor 0.3s ease, background-color 0.5s ease;
+    font-size: xx-large;
+}
+
+.button:hover {
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.buttonnormal:active {
+    background-color: #878787;
+}
+
+.buttonbad:active {
+    background-color: rgb(255, 0, 0);
+    animation-name: wrong;
+    animation-duration: 0.25s;
+}
+
+@keyframes wrong {
+    0% {transform: translate(0vw,0vh);}
+    33% {transform: translate(-3vw,0vh);}
+    66% {transform: translate(3vw,0vh);}
+    100% {transform: translate(0vw,0vh);}
 }
