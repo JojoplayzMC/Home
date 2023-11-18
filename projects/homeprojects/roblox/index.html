@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../topnav.css">
+    <link rel="stylesheet" href="../../../signin.css">
+    <script src="../../../signin.js"></script>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="../../../">Home</a>
+        <a href="../../../">Chatbot</a>
+        <a href="../../../">Socials</a>
+        <a onclick="openModal(document.getElementById('loginPrompt'))" class="purple">Sign In</a>
+        <a href="../../">Projects</a>
+    </div>
+
+    <div class="container">
+        <div class="divshort full">
+            <h1>Roblox</h1>
+            <p>Just roblox games</p>
+        </div>
+    </div>
+
+    <div onclick='window.location.href="https://www.roblox.com/games/15336382993/Freeze-Cam"' class="divother full button buttonnormal">
+        <h1 class="h1">FreezeCam</h1>
+        <p class="p">Hide and seek, but hiders can freeze their camera!</p>
+    </div>
+
+    <div onclick='window.location.href="https://www.roblox.com/games/14989203933/The-Sus-Games"' class="divother full button buttonnormal">
+        <h1 class="h1">The Sus Games</h1>
+        <p class="p">Scary!</p>
+    </div>
+
+    <div onclick='window.location.href="https://www.roblox.com/games/12252611327/Spin"' class="divother full button buttonnormal">
+        <h1 class="h1">Spin!</h1>
+        <p class="p">Spinny Parkour.</p>
+    </div>
+
+    <!-- Login Prompt -->
+    <div id="loginPrompt" class="modal">
+        <div class="modal-content" id="loginModal">
+            <button class="closeLoginPrompt">&times;</button>
+            <h1>Login</h1>
+
+            <div class="sign in">
+                <form onsubmit="checkUUID(); return false;">
+                    <input type="text" id="usernameInput" placeholder="Username" name="username" class="input">
+                    <input type="text" id="uuidInput" placeholder="UUID" name="uuid" class="input">
+                    <button type="submit" class="purple round">Sign In</button>
+                    <div class="popup" onclick="helpPopup()">
+                        <h2 class="purple round">?</h2>
+                        <span class="popuptext" id="myPopup">Accounts are only for beta testers or special users</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
