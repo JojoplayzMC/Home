@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jojoplayz</title>
+    <script src="../signin.js"></script>
+    <link rel="stylesheet" href="../chatbox.css">
+    <link rel="stylesheet" href="../topnav.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../signin.css">
+    <link rel="icon" type="image/x-icon" href="../logo.png">
+    <script>
+        // Countdown function
+        function startCountdown() {
+            // Set the date we're counting down to
+            var countDownDate = new Date("December 5, 2023 16:00:00").getTime();
+
+            // Update the countdown every 1 second
+            var x = setInterval(function () {
+                // Get the current date and time
+                var now = new Date().getTime();
+
+                // Calculate the remaining time
+                var distance = countDownDate - now;
+
+                // Calculate days, hours, minutes, and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Get the countdown element
+                var countdownElement = document.getElementById("countdown");
+
+                // Display the countdown
+                countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+                // If there are 5 minutes or less, apply the flashing animation
+                if (distance < 300000 && distance != 0) { // 300,000 milliseconds = 5 minutes
+                    document.getElementById("countdown-container").style.animation = "flash 1s infinite";
+                } else {
+                    // Reset the style if there are more than 5 minutes left
+                    document.getElementById("countdown-container").style.animation = "";
+                }
+
+                // If the countdown is finished, add the onclick attribute
+                if (distance < 0) {
+                    clearInterval(x);
+                    countdownElement.innerHTML = "Go to roblox page!";
+                    document.getElementById("countdown-container").style.animation = "";
+                    document.getElementById("countdown-container").setAttribute("onclick",
+                        "window.location.href='https://www.roblox.com/games/15049085901/Frequency-Waves-Project'"
+                        );
+                        document.getElementById("countdown-container").classList.add("button");
+                }
+            }, 10);
+        }
+
+        // Call the countdown function when the page loads
+        window.onload = function () {
+            startCountdown();
+        };
+    </script>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="../">Home</a>
+        <a href="../">Chatbot</a>
+        <a href="../">Socials</a>
+        <a href="../" class="purple">Sign In</a>
+        <a href="../projects/">Projects</a>
+        <a href="">Learn</a>
+        <a href="countdown/" class="active">Countdown</a>
+    </div>
+
+    <div class="container" name="socials">
+        <div class="divshort full textcenter bigtext big" id="countdown-container">
+            <h1 id="countdown"></h1>
+        </div>
+    </div>
+
+    <!-- Login Prompt. Don't touch -->
+    <div id="loginPrompt" class="modal">
+        <div class="modal-content" id="loginModal">
+            <button class="closeLoginPrompt">&times;</button>
+            <h1>Login</h1>
+            <div class="sign in">
+                <form onsubmit="checkUUID(); return false;">
+                    <input type="text" id="usernameInput" placeholder="Username" name="username" class="input">
+                    <input type="text" id="uuidInput" placeholder="UUID" name="uuid" class="input">
+                    <button type="submit" class="purple round">Sign In</button>
+                    <div class="popup" onclick="helpPopup()">
+                        <h2 class="purple round">?</h2>
+                        <span class="popuptext" id="myPopup">Accounts are only for beta testers or special users</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
