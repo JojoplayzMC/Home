@@ -60,6 +60,12 @@ body {
     border: none;
 }
 
+.red {
+    background: linear-gradient(to bottom, #ff0000 0%, #b50000 100%);
+    color: white;
+    border: none;
+}
+
 .round {
     padding: 1vw;
     border-radius: 1vw;
@@ -78,6 +84,10 @@ button {
     font-size: xx-large;
 }
 
+.textcenter {
+    text-align: center;
+}
+
 .button:hover {
     background-color: #ffffff;
     cursor: pointer;
@@ -94,8 +104,41 @@ button {
 }
 
 @keyframes wrong {
-    0% {transform: translate(0vw,0vh);}
-    33% {transform: translate(-3vw,0vh);}
-    66% {transform: translate(3vw,0vh);}
-    100% {transform: translate(0vw,0vh);}
+    0% {
+        transform: translate(0vw, 0vh);
+    }
+
+    33% {
+        transform: translate(-3vw, 0vh);
+    }
+
+    66% {
+        transform: translate(3vw, 0vh);
+    }
+
+    100% {
+        transform: translate(0vw, 0vh);
+    }
+}
+
+.bigtext {
+    font-size: xx-large;
+    padding-bottom: 4%;
+}
+
+.half {
+    width: 39.14vw;
+}
+
+/* Define the flashing animation */
+@keyframes flash {
+    50% {
+        background-color: rgba(255, 0, 0, 0.597);
+        color: white;
+    }
+}
+
+.big {
+    height: 45vh;
+    padding-top: 25vh;
 }
